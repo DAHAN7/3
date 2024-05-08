@@ -75,7 +75,7 @@ DELETE FROM departments WHERE (`department_id` = '1');
 -- 부서 테이블(참조되는 테이블(1))의 데이터가 삭제될 때
 -- 해당 테이블을 참조하는 테이블(직원 테이블(N))의 모든 참조 데이터의 참조 컬럼(부서ID)이 NULL로 설정됨
 
--- 3.
+-- 3. NO ACTION	
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS departments;
 
