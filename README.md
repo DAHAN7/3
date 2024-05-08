@@ -208,6 +208,12 @@
 ## DDL (데이터 정의어)
 
 ### CREATE 생성
+  - 새로운 데이터베이스 객체를 생성
+    - CREATE TABLE : 테이블 생성
+    - CREATE DATABASE : 데이터베이스 생성
+    - CREATE INDEX : 인덱스 생성
+    - CREATE VIEW : 뷰 생성
+    - CREATE USER : 유저 생성
 
 ### 테이블 생성
 - 테이블 생성 문법
@@ -218,4 +224,29 @@ CREATE TABLE 테이블명 (
     ....
     추가 제약조건
 );
+```
+### 외래키 참조
+```sql
+FOREIGN KEY(컬럼명) REFERENCES 참조할테이블명(참조할컬럼명)
+    ON DELETE [CASECADE|SET NULL|NO ACTION|SET DEFAULT ]
+    ON UPDATE [CASECADE|SET NULL|NO ACTION|SET DEFAULT ]
+```
+-외래키 참조 옵션
+    -참조된 키 값이 삭제되거나 수정될때 외래키를 어떻게 할 것인지 선택
+-옵션 종류
+    1.CASECADE : 참조된 키 값이 변경(삭제)되면 외래키도 함께 변경(삭제)됨
+    2.SET NULL : 참조된 키 값이 변경(삭제)되면 외래키를 'NULL'로 설정
+    3.NO ACTION : 참조된 키 값이 변경(삭제)되면 외래키를 '기본값'으로 설정 
+    4. SET DEFAULT : 참조된 키 값이 변경(삭제)되면 
+    외래키를 '기본값'으로 설정(MY SQL에서는 지원하지 않음)
+    5. RESTRICT : 참조된 키 값이 변경(삭제)될 때 해당 작업을 제한 (NO ACTION과 유사, MySQL에서 기본값)
+* REVERSE ENGINEERING (역공학)
+   - CREATE TABLE 로 생성된 SQL문을 거꾸로 ER 다이어그램 모델링으로 만들 수 있음.
+   - MySQL WorkBench
+    - 메뉴 - DataBase - ReverseEngineering(Ctrl + R)을 통해 실행
+### ALTER 문
+    -데이터베이스 객체(주로 테이블)의 구조를 변경하기 위해 사용
+```sql
+ALTER TABLE 대상테이블명
+[ADD|DROP|MODIFY|CHANGE|RENAME] [추가옵션]
 ```# java
