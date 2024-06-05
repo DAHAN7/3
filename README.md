@@ -251,3 +251,4 @@ ALTER TABLE 대상테이블명
 [ADD|DROP|MODIFY|CHANGE|RENAME] [추가옵션]
 ```# java
 # java
+# java
