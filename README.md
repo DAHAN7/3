@@ -253,3 +253,4 @@ ALTER TABLE 대상테이블명
 # java
 # java
 # java
+# java
