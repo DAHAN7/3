@@ -33,7 +33,6 @@ public class Jdbc6 {
 
             System.out.println("반영된 행의 수 : " + rows);
 
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (FileNotFoundException e) {
